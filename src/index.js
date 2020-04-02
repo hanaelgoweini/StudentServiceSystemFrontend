@@ -3,9 +3,10 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
 import Login from "./components/login/Login";
+import SecHome from "./components/homepage-sec/page-sec";
 import "bootstrap/dist/css/bootstrap.css";
 
-ReactDOM.render(<Login />, document.getElementById("root"));
+ReactDOM.render(<SecHome />, document.getElementById("root"));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
