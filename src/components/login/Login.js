@@ -1,15 +1,13 @@
-import React, { Component } from 'react';
-//import { Link } from 'react-router-dom';
+import React from 'react';
 import "./login.css";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-//import HomeSec from '../homepage-sec/pagesec';
 
-class Login extends Component {
-  render() {
+export default function Login() {
+
     return (
       <Grid component="main" className="root">
         <Grid className="background">
@@ -80,12 +78,10 @@ class Login extends Component {
               >
                 الدخول
               </Button>
-
+            
             </form>
           </div>
         </Grid>
       </Grid>
     );
   }
-}
-export default Login;

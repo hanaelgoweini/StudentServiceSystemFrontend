@@ -1,24 +1,21 @@
-import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter, Switch, Route} from 'react-router-dom';
 import Login from './components/login/Login';
+import SecHome from './components/homepage-sec/pagesec';
 
-
-class App extends Component {
-  render() {
-    const App = () => (
-      <div>
-        <Switch>
-          <Route exact path='/' component={Login}/>
-
-        </Switch>
-      </div>
-    )
-    return (
-      <Switch>
-        <App/>
-      </Switch>
-    );
-  }
+function App() {
+  return (
+    <div className="App">
+      <BrowserRouter>
+          <div className="content">
+            <Switch>
+              <Route exact path="/" component={Login} />
+              <Route path="/home" component={SecHome} />
+            </Switch>
+          </div>
+      </BrowserRouter>
+    </div>
+  );
 }
 
 export default App;
