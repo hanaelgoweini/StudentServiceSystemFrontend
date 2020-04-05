@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-//import Login from './components/login/Login';
-import pagesec from './components/homepage-sec/pagesec';
+import Login from './components/login/Login';
 
 
 class App extends Component {
@@ -9,7 +8,7 @@ class App extends Component {
     const App = () => (
       <div>
         <Switch>
-          <Route exact path='/' component={pagesec}/>
+          <Route exact path='/' component={Login}/>
 
         </Switch>
       </div>
