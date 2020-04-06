@@ -4,6 +4,7 @@ import UserDetails from "./UserDetails";
 import PersonalDetails from "./PersonalDetails";
 import Confirmation from "./Confirmation";
 import Success from "./Success";
+import axios from 'axios';
 
 class MainForm extends Component {
   state = {
@@ -41,9 +42,37 @@ class MainForm extends Component {
     this.setState({ [input]: event.target.value });
   };
 
-  render() {
+  handleSubmit = event =>{
+
+    event.preventDefault();
     const { step } = this.state;
     const {
+      fullName,
+      nationalId,
+      email,
+      gender,
+      address,
+      phoneNumber,
+      nationality,
+      guardianName,
+      guardianId,
+      relativeRelation,
+      birthDate,
+      medicalCondition,
+      guardianPhoneNumber
+    } = this.state;
+    const info = { fullName,nationalId,  email,gender,address,phoneNumber,nationality,guardianName,guardianId,relativeRelation,birthDate,medicalCondition,guardianPhoneNumber};
+    
+    fetch('http://localhost:5000/enroll',info)
+    .then(() => console.log('Info Sent'))
+    .catch(err => {
+        console.error(err);
+      });
+  };
+
+  render() {
+    const {
+      step,
       fullName,
       nationalId,
       email,

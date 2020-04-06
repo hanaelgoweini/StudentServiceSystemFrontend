@@ -6,6 +6,7 @@ import TextField from "@material-ui/core/TextField";
 import MenuItem from "@material-ui/core/MenuItem";
 import { nationalities } from "./Nationalities";
 
+
 class UserDetails extends Component {
   saveAndContinue = e => {
     e.preventDefault();
@@ -16,7 +17,7 @@ class UserDetails extends Component {
     const { values } = this.props;
     return (
       <div className="main-form">
-        <Form>
+        <Form onSubmit={this.props.handleSubmit}>
           <div className="column">
             <span
               style={{
@@ -243,6 +244,7 @@ class UserDetails extends Component {
                 </Form.Field>
               </div>
               <Button
+                type= "submit"
                 className="progress-button"
                 onClick={this.saveAndContinue}
               >
